@@ -1,0 +1,4 @@
+graft src/db
+graft docs
+include *.rst
+global-exclude *.pyc

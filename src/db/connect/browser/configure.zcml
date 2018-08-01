@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="db.connect">
+
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot
+      directory="overrides"
+      layer="db.connect.interfaces.IDbConnectLayer"
+      />
+
+  <!-- Publish static files -->
+  <plone:static
+      name="db.connect"
+      type="plone"
+      directory="static"
+      />
+
+<!-- configlet -->
+  <browser:page
+    name="connectionControlPanel"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    permission="cmf.ManagePortal"
+    class=".configlet.ConnectionControlPanelForm"
+    />
+</configure>

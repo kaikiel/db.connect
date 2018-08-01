@@ -1,0 +1,6 @@
+[report]
+include =
+    src/db/*
+omit =
+    */test*
+    */upgrades/*
